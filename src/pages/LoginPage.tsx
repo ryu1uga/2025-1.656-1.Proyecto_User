@@ -4,6 +4,8 @@ import "./LoginPage.css"
 const LoginPage = () => {
 
     const handleLogin = (email: string, password: string, rememberMe: boolean) => {
+        
+        
         console.log("Email:", email)
         console.log("Password:", password)
         console.log("Remember me:", rememberMe)
