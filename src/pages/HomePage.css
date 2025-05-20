@@ -1,0 +1,11 @@
+.carousel-item img {
+    height: 150px;
+  }
+#desc{
+    text-align: center;
+}
+#carrusel{
+    position: relative;
+    text-align: center;
+
+}
