@@ -4,11 +4,11 @@ import "./LoginPage.css"
 
 const LoginPage = () => {
 
+    const navigate = useNavigate();
     const login = (email: string, password: string, rememberMe: boolean) => {
         console.log("Email:", email)
         console.log("Password:", password)
         console.log("Remember me:", rememberMe)
-        const navigate = useNavigate();
         navigate("/home");
     }
 
