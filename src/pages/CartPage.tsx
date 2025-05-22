@@ -1,0 +1,18 @@
+import CartGames, { type Games } from "../components/CartGames";
+import "./CartPage.css";
+
+const CartPage = () => {
+  const lista : Games[] = [
+    { id : 1, name : "GOD OF WAR" },
+    { id : 2, name : "RAYMAN" },
+    { id : 3, name : "METAL GEAR SOLID" },
+    { id : 4, name : "DARK SOULS" },
+    { id : 5, name : "POKEMON" }
+  ]
+  /*Le estamos enviando al componente CartGames una lista*/
+  return <div>
+    <CartGames data={ lista }></CartGames> 
+</div>
+}
+
+export default CartPage

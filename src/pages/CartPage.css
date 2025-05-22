@@ -1,0 +1,45 @@
+.card-style {
+  display: inline-block;
+  width: 140px;
+  height: 200px;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
+.game-img {
+  background-color: pink;
+  height: 150px;
+}
+
+.card-body {
+  height: 100px;
+}
+
+.texto {
+  text-align: center;
+}
+
+.footer {
+  display: flex;
+  background-color: gray;
+  color: white;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.botones {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 10px;
+}
+
+.confirmar, .cancelar {
+  background-color: rgba(0, 0, 0, 0.767);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+}

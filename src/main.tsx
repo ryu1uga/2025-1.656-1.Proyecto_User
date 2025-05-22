@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import LoginPage from './pages/LoginPage.tsx'
 import RegisterPage from './pages/RegisterPage.tsx'
+import ResetPage from './pages/ResetPage.tsx';
 import JuegoDetalle from './pages/JuegoDetalle';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
@@ -17,6 +18,7 @@ createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route path="/" element={ <LoginPage /> } />
         <Route path="/register" element={ <RegisterPage /> } />
+        <Route path='/reset' element={ <ResetPage /> } />
         <Route path="/home" element={ <HomePage /> } />
         <Route path="/juego" element={<JuegoDetalle />} /> {/* Nueva ruta para los detalles del juego */}
       </Routes>
