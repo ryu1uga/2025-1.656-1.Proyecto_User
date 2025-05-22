@@ -1,7 +1,7 @@
 import React from 'react';
-import './ReseñaPage.css';
+import './ResenaPage.css';
 
-const JuegoDetalle = () => {
+const ResenaPage = () => {
     return (
         <div className="game-container">
             <h1 className="game-title">Nombre del Juego</h1>
@@ -32,4 +32,4 @@ const JuegoDetalle = () => {
     );
 };
 
-export default JuegoDetalle;
+export default ResenaPage;
