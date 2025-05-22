@@ -10,7 +10,6 @@ import { useState } from "react";
 
 const HomePage = () => {
     const ListaJ = localStorage.getItem("listaPrueba")
-    const juegosOriginales: juego[] = ListaJ ? JSON.parse(ListaJ) : [];
 
     let prueba : juego[]
     if (ListaJ == null) {
@@ -31,7 +30,7 @@ const HomePage = () => {
     setjuegos(ordenado);
     };
     const Restablecer = () => {
-    setjuegos(juegosOriginales);
+    setjuegos(prueba);
   };
     
     return (
