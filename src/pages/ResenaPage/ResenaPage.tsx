@@ -1,4 +1,3 @@
-import React from 'react';
 import './ResenaPage.css';
 
 const ResenaPage = () => {
