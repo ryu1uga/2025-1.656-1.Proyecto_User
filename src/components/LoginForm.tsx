@@ -18,7 +18,7 @@ const LoginForm = (props: LoginFormProps) => {
         { email: "gianfranco@email.pw", password: "Gianfranco_PW" },
         { email: "lucas@email.pw", password: "Lucas_PW" },
         { email: "ryuichi@email.pw", password: "Ryuichi_PW" },
-        { email: "giancarlo@email.pw", password: "Giancarlo_PW_gay" }
+        { email: "giancarlo@email.pw", password: "Giancarlo_PW" }
     ]
 
     const emailOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
