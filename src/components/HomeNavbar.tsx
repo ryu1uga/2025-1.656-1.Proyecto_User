@@ -1,4 +1,11 @@
-const HomeNavbar =()=> {
+interface HomeNavbarProps {
+  OrdenarVentas: () => void
+  OrdenarValoracion: () => void
+  Restablecer: () => void
+};
+
+
+const HomeNavbar = (props: HomeNavbarProps) => {
 
     return (<nav className="navbar navbar-expand-lg navbar-dark bg-dark px-4">
                 <div className="container-fluid">
@@ -20,10 +27,13 @@ const HomeNavbar =()=> {
                                 <a className="nav-link btn btn-primary" >Configuración</a>
                             </li>
                             <li className="nav-item">
-                                <a id="BotVentas" className="nav-link btn btn-primary" >Más Vendidos</a>
+                                <a id="BotVentas" className="nav-link btn btn-primary" onClick={props.OrdenarVentas} type="button" >Más Vendidos</a>
                             </li>
                             <li className="nav-item">
-                                <a id="BotVal" className="nav-link btn btn-primary" >Mejor Valorados</a>
+                                <a id="BotVal" className="nav-link btn btn-primary" onClick={props.OrdenarValoracion} type="button">Mejor Valorados</a>
+                            </li>
+                            <li className="nav-item">
+                                <a id="BotFeature" className="nav-link btn btn-primary" onClick={props.Restablecer} type="button">Mas Populares</a>
                             </li>
                         </ul>
 
