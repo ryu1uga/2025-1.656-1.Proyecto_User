@@ -1,0 +1,66 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.payment-card {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+.pago {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+}
+.form-label {
+    font-weight: 500;
+    color: #495057;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.form-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #6ba7e4;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+.divider {
+    border-top: 1px solid #2767a8;
+    margin: 1.5rem 0;
+}
+.disclaimer {
+    color: #6c757d;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+.cvc-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+.cvc-input {
+    width: 48%;
+}
+.proceed-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: #257ae9;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.proceed-btn:hover {
+    background-color: #257ae9;
+}
