@@ -35,7 +35,7 @@ const ConfirmarEmail = (props: ConfEmailProps) => {
     }
 
     const Volver = () => {
-        navigate("/register")
+        navigate("/")
     }
 
     return (

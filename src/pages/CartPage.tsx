@@ -9,7 +9,7 @@ const CartPage = () => {
     { id : 4, name : "DARK SOULS" },
     { id : 5, name : "POKEMON" }
   ]
-  /*Le estamos enviando al componente CartGames una lista*/
+  
   return <div>
     <CartGames data={ lista }></CartGames> 
     

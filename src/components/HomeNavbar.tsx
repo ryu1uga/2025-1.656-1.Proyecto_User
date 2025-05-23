@@ -12,7 +12,7 @@ const HomeNavbar = (props: HomeNavbarProps) => {
     const navigate = useNavigate ();
     return (<nav className="navbar navbar-expand-lg navbar-dark bg-dark px-4">
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="#">NOMBRE DE LA PAGINA</a>
+                    <a className="navbar-brand" href="#">LP Store</a>
                     
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                         <span className="navbar-toggler-icon"></span>

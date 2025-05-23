@@ -20,7 +20,7 @@ const PagoCarrito = () => {
 
         <div className="disclaimer">
           <strong>Disclaimer or Related</strong><br />
-          Lorem ipsum dolor sit amet consectetur. Adipiscing turpis acus non
+          Lorem ipsum dolor sit amet consectetur. Adipiscing turpis acus no
           tellus. Quis nisi tortor interdum adipiscing lacus. Pellentesque
           omare urna amet caliceus ut dui absentum non.
         </div>

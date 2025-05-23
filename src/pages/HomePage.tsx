@@ -6,47 +6,45 @@ import HomeList from "../components/HomeList";
 import type { juego } from "../components/HomeJuego";
 import { useState } from "react";
 
-
-
 const HomePage = () => {
-    const ListaJ = localStorage.getItem("listaPrueba")
+  const ListaJ = localStorage.getItem("listaPrueba");
 
-    let prueba : juego[]
-    if (ListaJ == null) {
-        prueba = []
-    }else {
-        prueba = JSON.parse(ListaJ)
-    }
+  let prueba: juego[];
+  if (ListaJ == null) {
+    prueba = [];
+  } else {
+    prueba = JSON.parse(ListaJ);
+  }
 
-    const [juegos, setjuegos] = useState<juego[]>(prueba)
+  const [juegos, setjuegos] = useState<juego[]>(prueba);
 
-    const ordenarPorVentas = () => {
+  const ordenarPorVentas = () => {
     const ordenado = [...juegos].sort((a, b) => parseFloat(b.ventas) - parseFloat(a.ventas));
     setjuegos(ordenado);
-    };
+  };
 
-    const ordenarPorValoracion = () => {
+  const ordenarPorValoracion = () => {
     const ordenado = [...juegos].sort((a, b) => parseFloat(b.valoracion) - parseFloat(a.valoracion));
     setjuegos(ordenado);
-    };
-    const Restablecer = () => {
+  };
+
+  const Restablecer = () => {
     setjuegos(prueba);
   };
-    
-    return (
-        <div>
-            <HomeNavbar 
-            OrdenarVentas={ordenarPorVentas}
-            OrdenarValoracion={ordenarPorValoracion}
-            Restablecer={Restablecer}></HomeNavbar>
-             <div className="container my-5">
-                <HomeSlides></HomeSlides>
-                <HomeList juegos={juegos} />
-            </div>
-        </div>
 
-    );
+  return (
+    <div className="background-container">
+      <HomeNavbar 
+        OrdenarVentas={ordenarPorVentas}
+        OrdenarValoracion={ordenarPorValoracion}
+        Restablecer={Restablecer}
+      ></HomeNavbar>
+      <div className="container my-5">
+        <HomeSlides></HomeSlides>
+        <HomeList juegos={juegos} />
+      </div>
+    </div>
+  );
 };
 
 export default HomePage;
-
