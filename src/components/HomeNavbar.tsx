@@ -42,13 +42,10 @@ const HomeNavbar = (props: HomeNavbarProps) => {
 
                         <div id = "searchbar" className="form-inline d-flex me-3" role="search">
                             <input className="form-control me-2" type="search" placeholder="Buscar juego..." aria-label="Buscar" />
-                            <button className="btn btn-outline-light" type="submit">
-                                <i className="fas fa-search"></i>
-                            </button>
+                            
                         </div>
-
-                        <a href="#" className="btn btn-outline-light" type="button" onClick={()=>navigate("/carrito")}>
-                            <i className="fas fa-shopping-cart"></i> Carrito
+                        <a  className="btn btn-outline-light" type="button" onClick={()=>navigate("/carrito")}>
+                            <i className="fas fa-shopping-cart me-1"></i> Carrito
                         </a>
                     </div>
                 </div>

@@ -1,55 +1,61 @@
-body {
-    background-color: #f8f9fa;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-.payment-card {
-    max-width: 500px;
-    margin: 2rem auto;
-    padding: 2rem;
-    border-radius: 15px;
-    background-color: white;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-}
-.pago {
+
+.payment-title {
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: bold;
-    color: #2c3e50;
+    color: #000000;
+    margin-top: 5rem;
     margin-bottom: 2rem;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif; /* Nueva fuente */
+    text-transform: uppercase; /* Mantiene mayúsculas */
+    letter-spacing: 1px;
 }
+
+.payment-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
 .form-label {
+    font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     color: #495057;
     display: block;
     margin-bottom: 0.5rem;
 }
+
 .form-input {
     width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #6ba7e4;
+    padding: 1rem;
+    border: 1px solid #28415c;
     border-radius: 8px;
-    margin-bottom: 1.5rem;
     font-size: 1rem;
+    box-sizing: border-box;
+    background-color: #f8f9fa; /* Fondo celeste */
 }
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
 .divider {
-    border-top: 1px solid #2767a8;
+    border-top: 1px solid #e0e0e0;
     margin: 1.5rem 0;
 }
-.disclaimer {
-    color: #6c757d;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
-}
-.cvc-section {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 2rem;
-}
-.cvc-input {
-    width: 48%;
-}
+
 .proceed-btn {
+    font-family: 'Montserrat', sans-serif;
     width: 100%;
     padding: 1rem;
     background-color: #257ae9;
@@ -59,8 +65,5 @@ body {
     font-size: 1.1rem;
     font-weight: 500;
     cursor: pointer;
-    transition: background-color 0.3s;
-}
-.proceed-btn:hover {
-    background-color: #257ae9;
+    margin-top: 1rem;
 }

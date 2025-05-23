@@ -9,7 +9,7 @@ import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import HomePage from './pages/HomePage.tsx'
 import PagoCarrito from './pages/CarroCompras/PagoCarrito.tsx';
-import CartPage from './pages/CartPage.tsx';
+import EmailConfirm from './pages/ConfirmarEmail.tsx';
 
 
 
@@ -22,8 +22,8 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/confirmar" element={<ConfirmarEmail enviar={() => {}} />} />
         <Route path="/home" element={ <HomePage /> } />
         <Route path="/juego" element={<JuegoDetalle />} />
-        <Route path="/carrito" element={<CartPage />} />
-        <Route path="/pago" element={<PagoCarrito />} />
+        <Route path="/carrito" element={<PagoCarrito />} />
+        <Route path="/confirmar" element={<EmailConfirm enviar={() => {}} />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
