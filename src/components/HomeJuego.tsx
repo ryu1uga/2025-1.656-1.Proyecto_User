@@ -4,4 +4,5 @@ export interface juego{
     ventas: string;
     descripcion: string;
     comentarios: string[];
+    trailer: URL;
 }

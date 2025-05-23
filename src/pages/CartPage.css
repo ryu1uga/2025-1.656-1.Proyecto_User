@@ -1,4 +1,4 @@
-.card-style {
+#Card-s-c{
   display: inline-block;
   width: 140px;
   height: 200px;
@@ -6,20 +6,20 @@
   margin-right: 20px;
 }
 
-.game-img {
+#img-juego {
   background-color: pink;
   height: 150px;
 }
 
-.card-body {
+#card-body {
   height: 100px;
 }
 
-.texto {
+#texto-C{
   text-align: center;
 }
 
-.footer {
+#footer-c{
   display: flex;
   background-color: gray;
   color: white;
@@ -27,14 +27,14 @@
   padding: 20px;
 }
 
-.botones {
+#botones-c {
   display: flex;
   flex-direction: column;
   justify-content: end;
   gap: 10px;
 }
 
-.confirmar, .cancelar {
+#confirmar-c, .cancelar-c{
   background-color: rgba(0, 0, 0, 0.767);
   color: white;
   border: none;

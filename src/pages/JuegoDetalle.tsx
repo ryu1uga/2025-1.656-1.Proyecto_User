@@ -10,67 +10,98 @@ const JuegoDetalle = () => {
       valoracion: "",
       ventas: "N/A",
       descripcion: "Sin descripción",
-      comentarios: "",
-    }
+      comentarios: [],
+      trailer: new URL("https://www.youtube.com/watch?v="),
+    },
   };
+
+  const trailerId = juego.trailer.toString().replace("https://www.youtube.com/watch?v=", "").trim() || "";
+  const embedUrl = trailerId ? `https://www.youtube.com/embed/${trailerId}` : "https://www.youtube.com/embed/";
 
   return (
     <div className="container mt-4">
-      <div className="d-flex justify-content-between align-items-center mb-4">
+      <div className="d-flex justify-content-between align-items-center mb-3">
         <h1 className="h3">{juego.nombre}</h1>
         <button className="btn btn-close" onClick={() => navigate("/home")}></button>
       </div>
 
-      <div className="row g-3">
-        {/* Sección principal - Trailer y detalles */}
-        <div className="col-12 col-md-8">
-          <div className="card h-100">
-            <div className="card-body">
+      <div className="row">
+
+        {/* Trailer del juego */}
+        <div className="col-12 col-md-8 mb-3">
+          <div className="card">
+            <div className="card-body text-center bg-light">
               <h5 className="card-title">Trailer de {juego.nombre}</h5>
-              <div className="ratio ratio-16x9 bg-secondary mb-3">
-                {/* Placeholder para el video */}
-              </div>
-              
-              <h5 className="mt-4">Detalles del juego</h5>
-              <p className="card-text"><strong>Descripción:</strong> {juego.descripcion}</p>
+              <iframe
+                width="100%"
+                height="400px"
+                src={embedUrl}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                title={`Trailer de ${juego.nombre}`}
+              ></iframe>
             </div>
           </div>
         </div>
 
-        {/* Sección secundaria - Valoración y comentarios */}
-        <div className="col-12 col-md-4">
+        <div className="col-12 col-md-4 mb-3">
           <div className="card h-100">
             <div className="card-body">
-              <div className="d-flex justify-content-between align-items-center mb-3">
-                <h5 className="card-title mb-0">Valoración</h5>
-                <span className="badge bg-primary fs-5">{juego.valoracion}</span>
-              </div>
-              
-              <p className="mb-3"><strong>Ventas:</strong> {juego.ventas}</p>
-              
+              <h5 className="card-title">Detalles de juego</h5>
+              <p className="card-text fw-bold">Descripción: </p>
+              <p>{juego.descripcion}</p>
               <div className="mb-3">
-                <h6>Comentarios</h6>
-                {/* Aquí irían los comentarios existentes */}
+                <p><strong>Valoración:</strong> {juego.valoracion}</p>
+                <p><strong>Ventas:</strong> {juego.ventas}</p>
               </div>
-              
-              <div className="form-group">
-                <label htmlFor="Comment" className="form-label">Deja tu comentario</label>
-                <textarea
-                  className="form-control"
-                  id="Comment"
-                  rows={3}
-                  placeholder="Escribe tu opinión sobre el juego..."
-                ></textarea>
+              <div className="d-flex flex-column gap-2">
+                <div className="form-group">
+                  <label htmlFor="Comment">Comentarios</label>
+                  <textarea
+                    className="form-control"
+                    id="Comment"
+                    rows={3}
+                    placeholder="Deja un comentario..."
+                  ></textarea>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Botón de compra */}
-      <div className="row mt-3">
+      <div className="row">
+        <div className="col-12 col-md-6 mb-3">
+          <div className="card">
+            <div className="card-body text-center">
+              <h5 className="card-title">Valoración</h5>
+              <p>{juego.valoracion}</p>
+            </div>
+          </div>
+        </div>
+        <div className="col-12 col-md-6">
+          <button className="btn btn-primary btn-lg w-100">Compra ahora</button>
+        </div>
+      </div>
+
+      <div className="row mt-4">
         <div className="col-12">
-          <button className="btn btn-primary btn-lg w-100 py-3">Comprar ahora</button>
+          <h5 className="mb-3">Galería de Imágenes</h5>
+          <div className="row g-3">
+            {[1, 2, 3, 4].map((i) => (
+              <div key={i} className="col-6 col-md-3">
+                <div className="border rounded overflow-hidden" style={{ height: "180px" }}>
+                  <img
+                    src={`https://via.placeholder.com/300x180?text=Imagen+${i}`}
+                    alt={`Imagen ${i}`}
+                    className="img-fluid h-100 w-100"
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

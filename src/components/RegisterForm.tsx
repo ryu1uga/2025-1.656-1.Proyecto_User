@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 interface RegisterFormProps {
     enviar: (name: string, email: string, password: string, confirmPassword: string, rememberMe: boolean) => void
@@ -16,6 +16,8 @@ const RegisterForm = (props: RegisterFormProps) => {
     const [passwordError, setPasswordError] = useState<string>("")
     const [confirmPasswordError, setConfirmPasswordError] = useState<string>("")
     const [agreeError, setAgreeError] = useState<string>("")
+
+    const navigate = useNavigate()
 
     const nameOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setName(e.currentTarget.value)
@@ -47,49 +49,56 @@ const RegisterForm = (props: RegisterFormProps) => {
         
         if (!name.trim())
         {
-            setNameError("Name is required.");
-            valid = false;
+            setNameError("Name is required.")
+            valid = false
         }
 
         if (!email.trim())  
         {
-            setEmailError("Email is required.");
-            valid = false;
+            setEmailError("Email is required.")
+            valid = false
         }
         else if (!/\S+@\S+\.\S+/.test(email))
         {
-            setEmailError("Email is not valid.");
-            valid = false;
+            setEmailError("Email is not valid.")
+            valid = false
         }
 
         if (!password)
         {
-            setPasswordError("Password is required.");
-            valid = false;
+            setPasswordError("Password is required.")
+            valid = false
         }
         else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/.test(password))
         {
-            setPasswordError("Password must be at least 8 characters and include uppercase, lowercase, number, and special character.");
-            valid = false;
+            setPasswordError("Password must be at least 8 characters and include uppercase, lowercase, number, and special character.")
+            valid = false
         }
         
         if (!confirmPassword)  
         {
-            setConfirmPasswordError("Please confirm your password.");
-            valid = false;
+            setConfirmPasswordError("Please confirm your password.")
+            valid = false
         }
         else if (password !== confirmPassword)
         {
-            setConfirmPasswordError("Passwords do not match.");
-            valid = false;
+            setConfirmPasswordError("Passwords do not match.")
+            valid = false
         }
 
         if (!agree) {
-            setAgreeError("You must accept the terms and conditions.");
-            valid = false;
+            setAgreeError("You must accept the terms and conditions.")
+            valid = false
         }
 
         return valid
+    }
+
+    const handleRegister = () => {
+        if (validateForm()) {
+            props.enviar(name, email, password, confirmPassword, agree)
+            navigate("/confirmar")
+        }
     }
 
     return <div>
@@ -127,13 +136,7 @@ const RegisterForm = (props: RegisterFormProps) => {
                         <Link to={"../"}>Login here</Link>
                     </div>
                     <div className="d-flex justify-content-center">
-                        <button type="button" className="btn btn-primary" onClick={() =>
-                            {
-                                if (validateForm())
-                                {
-                                    props.enviar(name, email, password, confirmPassword, agree)
-                                }
-                            }}>REGISTER</button>
+                        <button type="button" className="btn btn-primary" onClick={handleRegister}>REGISTER</button>
                     </div>
                 </div>
             </div>
