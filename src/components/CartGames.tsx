@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 export interface Games { 
   id : number
@@ -10,6 +11,7 @@ interface ListGames {
 }
 
 const CartGames = (props : ListGames) => { 
+  const navigate = useNavigate();
   const saveCart = localStorage.getItem("guardar-carrito")
   const initialCart: Games[] = saveCart ? JSON.parse(saveCart) : props.data
 
@@ -41,7 +43,7 @@ const CartGames = (props : ListGames) => {
     </div>
 
     <div className="botones">
-      <button className="confirmar">Confirm Order</button>
+      <button className="confirmar" type = "button" onClick={()=>navigate("/pago")}>Confirm Order</button>
       <button className="cancelar">Cancel Order</button>
       <button className="btn btn-secondary" onClick={resetCart}>
           Reset Cart

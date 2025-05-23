@@ -10,6 +10,7 @@ import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import HomePage from './pages/HomePage.tsx'
 import PagoCarrito from './pages/CarroCompras/PagoCarrito.tsx';
+import CartPage from './pages/CartPage.tsx';
 
 
 
@@ -23,7 +24,8 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/home" element={ <HomePage /> } />
         <Route path="/reset" element={ <ResetPage /> } />
         <Route path="/juego" element={<JuegoDetalle />} />
-        <Route path="/carrito" element={<PagoCarrito />} />
+        <Route path="/carrito" element={<CartPage />} />
+        <Route path="/pago" element={<PagoCarrito />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

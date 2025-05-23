@@ -1,3 +1,6 @@
+import type { Button } from "bootstrap";
+import { Navigate, useNavigate } from "react-router-dom";
+
 interface HomeNavbarProps {
   OrdenarVentas: () => void
   OrdenarValoracion: () => void
@@ -6,7 +9,7 @@ interface HomeNavbarProps {
 
 
 const HomeNavbar = (props: HomeNavbarProps) => {
-
+    const navigate = useNavigate ();
     return (<nav className="navbar navbar-expand-lg navbar-dark bg-dark px-4">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="#">NOMBRE DE LA PAGINA</a>
@@ -44,7 +47,7 @@ const HomeNavbar = (props: HomeNavbarProps) => {
                             </button>
                         </div>
 
-                        <a href="#" className="btn btn-outline-light">
+                        <a href="#" className="btn btn-outline-light" type="button" onClick={()=>navigate("/carrito")}>
                             <i className="fas fa-shopping-cart"></i> Carrito
                         </a>
                     </div>

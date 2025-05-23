@@ -4,98 +4,73 @@ import type { juego } from '../components/HomeJuego';
 const JuegoDetalle = () => {
   const navigate = useNavigate();
   const { state } = useLocation();
-const { juego }: { juego: juego } = state || 
-{
-  juego: {nombre: "Juego no encontrado",valoracion: "",ventas: "N/A",descripcion: "Sin descripción",comentarios: "",}
-};
+  const { juego }: { juego: juego } = state || {
+    juego: {
+      nombre: "Juego no encontrado",
+      valoracion: "",
+      ventas: "N/A",
+      descripcion: "Sin descripción",
+      comentarios: "",
+    }
+  };
 
   return (
     <div className="container mt-4">
-      <div className="d-flex justify-content-between align-items-center mb-3">
+      <div className="d-flex justify-content-between align-items-center mb-4">
         <h1 className="h3">{juego.nombre}</h1>
         <button className="btn btn-close" onClick={() => navigate("/home")}></button>
       </div>
 
-      <div className="row">
-        {/* Trailer del juego */}
-        <div className="col-12 col-md-8 mb-3">
-          <div className="card">
-            <div className="card-body text-center bg-light">
+      <div className="row g-3">
+        {/* Sección principal - Trailer y detalles */}
+        <div className="col-12 col-md-8">
+          <div className="card h-100">
+            <div className="card-body">
               <h5 className="card-title">Trailer de {juego.nombre}</h5>
-
-              {/* Placeholder para el video con link (Vista previa por confirmar) */}
-              <div className="bg-secondary" style={{ height: "200px" }}></div>
+              <div className="ratio ratio-16x9 bg-secondary mb-3">
+                {/* Placeholder para el video */}
+              </div>
+              
+              <h5 className="mt-4">Detalles del juego</h5>
+              <p className="card-text"><strong>Descripción:</strong> {juego.descripcion}</p>
             </div>
           </div>
         </div>
 
-        {/* CÓDIGO PARA IMAGENES DEL JUEGO (MEJORAR)
-
-        <div className="col-12 col-md-4 mb-3">
-          <div className="card">
-            <div className="card-body text-center bg-light">
-              <h5 className="card-title">Imagen de {juego.nombre}</h5>
-
-              <img src="https://via.placeholder.com/150"alt={juego.nombre}className="img-fluid"/>
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-body text-center bg-light">
-              <h5 className="card-title">Imagen de {juego.nombre}</h5>
-
-              <img src="https://via.placeholder.com/150"alt={juego.nombre}className="img-fluid"/>
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-body text-center bg-light">
-              <h5 className="card-title">Imagen de {juego.nombre}</h5>
-
-              <img src="https://via.placeholder.com/150"alt={juego.nombre}className="img-fluid"/>
-            </div>
-          </div>
-        </div> 
-        
-        */}
-
-        {/* Detalles - Calificaciones del juego (Mejorar interfaz y falta visualizar cantidad de comentarios - Hacer barra de desplazamiento) */}
-        <div className="col-12 col-md-4 mb-3">
+        {/* Sección secundaria - Valoración y comentarios */}
+        <div className="col-12 col-md-4">
           <div className="card h-100">
             <div className="card-body">
-              <h5 className="card-title">Detalles de juego</h5>
-              <p className="card-text fw-bold">Descripción: </p>
-              <p>{juego.descripcion}</p>
-                <div className="mb-3">
-                  <p><strong>Valoración:</strong> {juego.valoracion}</p>
-                  <p><strong>Ventas:</strong>{juego.ventas}</p>
-                </div>
-              <div className="d-flex flex-column gap-2">
-                <div className="form-group">
-                  <label htmlFor="Comment">Comentarios</label>
-                  <textarea
-                    className="form-control"
-                    id="Comment"
-                    rows={3}
-                    placeholder="Deja un comentario..."
-                  ></textarea>
-                </div>
+              <div className="d-flex justify-content-between align-items-center mb-3">
+                <h5 className="card-title mb-0">Valoración</h5>
+                <span className="badge bg-primary fs-5">{juego.valoracion}</span>
+              </div>
+              
+              <p className="mb-3"><strong>Ventas:</strong> {juego.ventas}</p>
+              
+              <div className="mb-3">
+                <h6>Comentarios</h6>
+                {/* Aquí irían los comentarios existentes */}
+              </div>
+              
+              <div className="form-group">
+                <label htmlFor="Comment" className="form-label">Deja tu comentario</label>
+                <textarea
+                  className="form-control"
+                  id="Comment"
+                  rows={3}
+                  placeholder="Escribe tu opinión sobre el juego..."
+                ></textarea>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Calificación - Compra (Paso a la interfaz de compra) */}
-      <div className="row">
-        <div className="col-12 col-md-6 mb-3">
-          <div className="card">
-            <div className="card-body text-center">
-              <h5 className="card-title">Valoración</h5>
-              <p>{juego.valoracion}</p>
-            </div>
-          </div>
-        </div>
-        <div className="col-12 col-md-6">
-          <button className="btn btn-primary btn-lg w-100">Compra ahora</button>
+      {/* Botón de compra */}
+      <div className="row mt-3">
+        <div className="col-12">
+          <button className="btn btn-primary btn-lg w-100 py-3">Comprar ahora</button>
         </div>
       </div>
     </div>

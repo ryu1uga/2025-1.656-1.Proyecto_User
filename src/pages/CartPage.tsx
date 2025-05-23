@@ -12,6 +12,7 @@ const CartPage = () => {
   /*Le estamos enviando al componente CartGames una lista*/
   return <div>
     <CartGames data={ lista }></CartGames> 
+    
 </div>
 }
 
