@@ -9,6 +9,7 @@ import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import HomePage from './pages/HomePage.tsx'
 import PagoCarrito from './pages/CarroCompras/PagoCarrito.tsx';
+import ResenaPage from './pages/ResenaPage/ResenaPage.tsx';
 import EmailConfirm from './components/ConfirmarEmail.tsx';
 
 
@@ -23,6 +24,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/juego" element={<JuegoDetalle />} />
         <Route path="/carrito" element={<PagoCarrito />} />
         <Route path="/confirmar" element={<EmailConfirm enviar={() => {}} />} />
+        <Route path="/resena" element={<ResenaPage />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
