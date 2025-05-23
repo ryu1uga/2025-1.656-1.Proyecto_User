@@ -9,7 +9,7 @@ const ResetPage = () => {
   }
 
   return <div className="container"> 
-    <ResetForm enviar={handlePasswordReset}></ResetForm> 
+    <ResetForm enviar={ handlePasswordReset }></ResetForm> 
   </div>
 }
 

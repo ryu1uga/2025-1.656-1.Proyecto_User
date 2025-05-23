@@ -10,6 +10,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import HomePage from './pages/HomePage.tsx'
 import PagoCarrito from './pages/CarroCompras/PagoCarrito.tsx';
 import EmailConfirm from './pages/ConfirmarEmail.tsx';
+import ResetPage from './pages/ResetPage.tsx';
 
 
 
@@ -21,6 +22,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/register" element={ <RegisterPage /> } />
         <Route path="/confirmar" element={<ConfirmarEmail enviar={() => {}} />} />
         <Route path="/home" element={ <HomePage /> } />
+        <Route path='/reset' element={ <ResetPage/> } />
         <Route path="/juego" element={<JuegoDetalle />} />
         <Route path="/carrito" element={<PagoCarrito />} />
         <Route path="/confirmar" element={<EmailConfirm enviar={() => {}} />} />
