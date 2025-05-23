@@ -5,6 +5,7 @@ import RegisterPage from './pages/RegisterPage.tsx'
 import JuegoDetalle from './pages/JuegoDetalle';
 import PagoCarrito from './pages/CarroCompras/PagoCarrito';
 import ResenaPage from './pages/ResenaPage/ResenaPage.tsx';
+import BarraFiltros from './pages/Filtro_Precio_etc/BarraFiltros.tsx';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
@@ -23,6 +24,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/juego" element={<JuegoDetalle />} /> {/* Nueva ruta para los detalles del juego */}
         <Route path="/carrito" element={<PagoCarrito />} /> {/* Nueva ruta */}
         <Route path="/resena" element={<ResenaPage />} /> {/* Nueva ruta */}
+        <Route path="/barrafiltro" element={<BarraFiltros />} /> {/* Nueva ruta */}
       </Routes>
     </BrowserRouter>
   </StrictMode>,
