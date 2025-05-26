@@ -11,6 +11,8 @@ import HomePage from './pages/HomePage.tsx'
 import PagoCarrito from './pages/CarroCompras/PagoCarrito.tsx';
 import EmailConfirm from './pages/ConfirmarEmail.tsx';
 import ResetPage from './pages/ResetPage.tsx';
+import ChangePage from './pages/ChangePage.tsx';
+import CartPage from './pages/CartPage.tsx';
 
 
 
@@ -24,8 +26,10 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/home" element={ <HomePage /> } />
         <Route path='/reset' element={ <ResetPage/> } />
         <Route path="/juego" element={<JuegoDetalle />} />
-        <Route path="/carrito" element={<PagoCarrito />} />
+        <Route path="/carrito" element={<CartPage />} />
+        <Route path="/user/pago" element={<PagoCarrito />} />
         <Route path="/confirmar" element={<EmailConfirm enviar={() => {}} />} />
+        <Route path='/edit' element={ <ChangePage />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
